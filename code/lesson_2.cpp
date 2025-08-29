@@ -5,7 +5,7 @@
 #include <string>
 #include <type_traits>
 
-bool contains(const std::string& search, std::vector<std::string>& words, size_t start_from = 0)
+bool contains(const std::string& search,const std::vector<std::string>& words, size_t start_from = 0)
 {
 	if (start_from >= words.size())
 		throw std::runtime_error(
