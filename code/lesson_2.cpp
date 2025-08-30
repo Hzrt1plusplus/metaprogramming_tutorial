@@ -1,3 +1,6 @@
+// Hazret Hasanov 2025
+// Lesson 2: Metafunctions
+
 #include <tuple>
 #include <iostream>
 #include <vector>
