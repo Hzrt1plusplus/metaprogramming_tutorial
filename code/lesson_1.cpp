@@ -1,3 +1,6 @@
+// Hazret Hasanov 2025
+// Lesson 1: introduction to metaprogramming
+
 #include <iostream>
 #include <stdexcept>
 #include <type_traits>
