@@ -44,12 +44,6 @@ namespace aml {
 	{
 		return type_list<Var...>();
 	}
-	
-	template<typename ...Vars>
-	constexpr decltype(auto) reverse(const type_list<Vars...>& ls)	{
-		
-	}
-
 
 	template <typename ...V,typename ...D>
 	constexpr decltype(auto) merge(const type_list<V...>& first, const type_list<D...>& second)
@@ -58,12 +52,12 @@ namespace aml {
 	}
 
 	template<typename First, typename ...Var>
-	constexpr decltype(auto) _reverse(type_list<First,Var...> ls)
+	constexpr decltype(auto) reverse(type_list<First,Var...> ls)
 	{ 
-		return merge(_reverse(type_list<Var...>()),type_list<First>());	
+		return merge(reverse(type_list<Var...>()),type_list<First>());	
 	}
 
-	constexpr type_list<> _reverse(type_list<> ls) {
+	constexpr type_list<> reverse(type_list<> ls) {
 		return type_list<>();	
 	}
 
@@ -72,7 +66,7 @@ namespace aml {
 
 	template<typename First, typename ...Rest>
 	struct end<type_list<First,Rest...>> {
-		using result = front<decltype(_reverse(type_list<First,Rest...>()))>::result;
+		using result = front<decltype(reverse(type_list<First,Rest...>()))>::result;
 	};
 
 	
